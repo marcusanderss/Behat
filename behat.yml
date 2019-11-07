@@ -1,0 +1,13 @@
+default:
+    extensions:
+        Behat\MinkExtension:
+            default_session: goutte
+            goutte: ~
+            selenium2: 
+              wd_host: "http://127.0.0.1:4444/wd/hub"
+              capabilities: { "browserName": "firefox", "browser": "firefox", "version":  "", "platform": "WINDOWS" }
+            browser_name: firefox
+    suites:
+        default:
+            contexts:
+                - FeatureContext
