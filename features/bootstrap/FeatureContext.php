@@ -20,6 +20,45 @@ class FeatureContext extends MinkContext implements Context
 
     }
 	
+	/** Click the element with CSS selector ".something-clickable"
+	 *
+     * @When /^(?:|I )click the element with CSS selector "([^"]*)"$/
+     */
+    public function iClickTheElementWithCssSelector($css_selector) 
+	{
+        $element = $this->getSession()->getPage()->find("css", $css_selector);
+          if (empty($element)) {
+          throw new \Exception(sprintf("The page '%s' does not contain the css selector '%s'", $this->getSession()->getCurrentUrl(), $css_selector));
+          }
+		  
+	// ok, let's click on it
+    $element->click();
+	
+    }
+	
+	/**
+     * @Then I should see the CSS selector :arg1
+     */
+    public function iShouldSeeTheCssSelector($css_selector)
+    {
+		$element = $this->getSession()->getPage()->find("css", $css_selector);
+		if (empty($element)) {
+		throw new \InvalidArgumentException(sprintf("The page '%s' does not contain the css selector '%s'", $this->getSession()->getCurrentUrl(), $css_selector));
+        }
+	}
+	
+	/**
+     * @Then I should not see the CSS selector :arg1
+     */
+    public function iShouldNotSeeTheCssSelector($css_selector)
+    {
+        $element = $this->getSession()->getPage()->find("css", $css_selector);
+        if (!empty($element)) {
+        throw new \Exception(sprintf("The page '%s' contains the css selector '%s'", $this->getSession()->getCurrentUrl(), $css_selector));
+       }
+    }
+
+	
 	/** Click on the element with the provided xpath query
      *
      * @When /^I click on the element with xpath "([^"]*)"$/
