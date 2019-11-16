@@ -1,6 +1,6 @@
 @karolinska_click_buttons
  Feature: 
-  Gå till startsidan
+  CSS selector test
 
  @karolinska_click_buttons
  Scenario: Klicka på "Stöd och verktyg"
