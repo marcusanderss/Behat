@@ -21,6 +21,11 @@ class ComposerStaticInit028c86e89a78c9620ac10a9a32471c13
         array (
             'emuse\\BehatHTMLFormatter\\' => 25,
         ),
+        'Z' => 
+        array (
+            'Zend\\EventManager\\' => 18,
+            'Zend\\Code\\' => 10,
+        ),
         'T' => 
         array (
             'Twig\\' => 5,
@@ -72,6 +77,14 @@ class ComposerStaticInit028c86e89a78c9620ac10a9a32471c13
         'emuse\\BehatHTMLFormatter\\' => 
         array (
             0 => __DIR__ . '/..' . '/emuse/behat-html-formatter/src',
+        ),
+        'Zend\\EventManager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-eventmanager/src',
+        ),
+        'Zend\\Code\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-code/src',
         ),
         'Twig\\' => 
         array (
@@ -198,6 +211,20 @@ class ComposerStaticInit028c86e89a78c9620ac10a9a32471c13
             'Twig_' => 
             array (
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
+        'S' => 
+        array (
+            'SensioLabs\\Behat\\PageObjectExtension\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/sensiolabs/behat-page-object-extension/src',
+            ),
+        ),
+        'P' => 
+        array (
+            'ProxyManager\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/ocramius/proxy-manager/src',
             ),
         ),
         'B' => 

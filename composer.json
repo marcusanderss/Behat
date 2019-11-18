@@ -10,6 +10,7 @@
         "bin-dir": "bin/"  
     },
     "require-dev": {
-        "emuse/behat-html-formatter": "^0.2.0"
+        "emuse/behat-html-formatter": "^0.2.0",
+        "sensiolabs/behat-page-object-extension": "2.0"
     }
 }
