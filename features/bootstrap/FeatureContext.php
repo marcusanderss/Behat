@@ -1,6 +1,8 @@
 <?php
 use Behat\Behat\Context\Context;
 use Behat\MinkExtension\Context\MinkContext;
+use Pages\ProductPage;
+use Pages\HomePage;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 /**
@@ -8,16 +10,35 @@ use Behat\Gherkin\Node\TableNode;
  */
 class FeatureContext extends MinkContext implements Context
 {
-    /**
-     * Initializes context.
-     *
-     * Every scenario gets its own context instance.
-     * You can also pass arbitrary arguments to the
-     * context constructor through behat.yml.
+	 /**
+     * @var ProductPage
      */
-    public function __construct()
-    {
+    private $productPage;
+	private $hemsida;
 
+    public function __construct(HomePage $hemsida, ProductPage $productPage)
+    {
+        $this->hemsida = $hemsida;
+		$this->productPage = $productPage;
+    }
+	
+	/**
+     * @Given /^(?:|I )visited (?:|the )(?P<pageName>.*?)$/
+     */
+    public function iVisitedThe($pageName)
+    {
+     if (!isset($this->$pageName)) {
+     throw new \RuntimeException(sprintf('Unrecognised page: "%s".', $pageName));
+    }
+    $this->$pageName->open();
+    }
+	
+	/**
+     * @Given /^I go to: Stöd och verktyg$/
+     */
+    public function iGoToStödOchVerktyg()
+    {
+    $this->hemsida->findLink("Stöd och verktyg")->click();
     }
 	
 	/** Click the element with CSS selector ".something-clickable"
