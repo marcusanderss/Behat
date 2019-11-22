@@ -41,6 +41,14 @@ class FeatureContext extends MinkContext implements Context
     $this->hemsida->findLink("Stöd och verktyg")->click();
     }
 	
+	/**
+     * @Given /^I go to sida "([^"]*)"$/
+     */
+    public function iGoToSida($css_selector)
+    {
+    $this->hemsida->findLink($css_selector)->click();
+    }
+	
 	/** Click the element with CSS selector ".something-clickable"
 	 *
      * @When /^(?:|I )click the element with CSS selector "([^"]*)"$/
