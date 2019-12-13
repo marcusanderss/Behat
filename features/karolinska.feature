@@ -28,7 +28,6 @@
   And I should see "Bistro A"
   And I should see "Café Arom"
   And I should see "Flemingsbergs Stories Zanderska Huset"
-  And I should see "Frendo"
   And I should see "Restaurang 61:an"
   And I should see "Restaurang Tango"
   And I should see "Stockholm Food"
